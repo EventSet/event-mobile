@@ -4,7 +4,8 @@ import { IonicPage, NavController,
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AuthProvider} from '../../providers/auth/auth';
 import {EmailValidator} from '../../validators/email';
-import { HomePage } from '../home/home';
+import { TabsPage } from '../tabs/tabs';
+
 
 
 
@@ -47,7 +48,7 @@ export class RegisterPage {
 
       this.authProvider.registerUser(email, password).then(user=>{
         this.loading.dismiss().then(()=>{
-          this.navCtrl.setRoot(HomePage);
+          this.navCtrl.setRoot(TabsPage);
         });
       },
     error=>{
